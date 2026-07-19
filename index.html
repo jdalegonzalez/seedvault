@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>SeedVault360 — Scale Your Business</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="kiosk">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="logo">SeedVault360</h1>
+      <h2 class="tagline">Scale Your Business. Zero Cost. Zero Risk.</h2>
+      <p class="subtitle">We provide the capital, logistics, and insurance to get local products into Atlanta's biggest hotels and airlines.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h2 class="section-title">Watch Us Grow!</h2>
+
+      <div class="columns">
+        <!-- Vendor Column -->
+        <div class="card card--vendor">
+          <div class="card__header">
+            <h3>FOR VENDORS</h3>
+          </div>
+
+          <ul class="benefits">
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <strong>Get Funded</strong>
+                <p>We provide capital for your POs.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <div>
+                <strong>Logistics Handled</strong>
+                <p>We ship &amp; insure it.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              <div>
+                <strong>Perfect Match</strong>
+                <p>Direct leads, no cold calls.</p>
+              </div>
+            </li>
+          </ul>
+
+          <button class="cta cta--vendor" onclick="openForm('vendor')">JOIN VENDOR WAITLIST</button>
+        </div>
+
+        <!-- Buyer Column -->
+        <div class="card card--buyer">
+          <div class="card__header">
+            <h3>FOR BUYERS</h3>
+          </div>
+
+          <ul class="benefits">
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div>
+                <strong>Source Local</strong>
+                <p>Verified Atlanta vendors.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div>
+                <strong>Zero Risk</strong>
+                <p>Every delivery is insured.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <strong>No Cost</strong>
+                <p>Zero procurement fees.</p>
+              </div>
+            </li>
+          </ul>
+
+          <button class="cta cta--buyer" onclick="openForm('buyer')">JOIN BUYER WAITLIST</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Connecting Atlanta's local economy with world-class hospitality</p>
+    </footer>
+  </div>
+
+  <!-- Form Dialog Overlay -->
+  <div id="formOverlay" class="overlay" onclick="closeForm(event)">
+    <div class="dialog" onclick="event.stopPropagation()">
+      <!-- Form View -->
+      <div id="formView">
+        <h2 id="formTitle" class="dialog__title"></h2>
+        <p id="formDesc" class="dialog__desc"></p>
+        <form id="waitlistForm" onsubmit="submitForm(event)">
+          <input type="hidden" id="userType" name="userType">
+
+          <div class="field">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+
+          <div class="field">
+            <label for="company">Company Name *</label>
+            <input type="text" id="company" name="company" placeholder="Company Name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0100" required>
+          </div>
+
+          <div class="dialog__actions">
+            <button type="button" class="btn btn--outline" onclick="closeForm()">Cancel</button>
+            <button type="submit" id="submitBtn" class="btn btn--primary">Join Waitlist</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success View -->
+      <div id="successView" class="success" style="display: none;">
+        <svg class="success__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h2>You're on the list!</h2>
+        <p>We'll be in touch soon to get you started with SeedVault360.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
